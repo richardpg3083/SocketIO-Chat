@@ -4,7 +4,7 @@ let fileURL;
 
 //  Formularios
 const formLogin = document.querySelector("#formLogin");
-const formContentChat = document.querySelector(".body-chat");
+const formContentChat = document.querySelector(".bodyChat");
 const formShowUsers = document.querySelector("#formShowUsers");
 const formChatGrupal = document.querySelector("#formChatGrupal");
 
@@ -38,6 +38,8 @@ socket.on("login", () => {
   formContentChat.style.display = "flex";
   formShowUsers.style.display = "block";
   formChatGrupal.style.display = "block";
+document.querySelector("#userChat").innerHTML=txtUserNickName.value+"<br /><p class='text-dark fs-6'>en línea</p>";
+document.querySelector("#UserNick").value=txtUserNickName.value;
 });
 
 socket.on("userExists", () => {
@@ -57,16 +59,33 @@ socket.on("activeSessions", (users) => {
 });
 
 socket.on("sendMessage", ({ message, user, image }) => {
-  printMessages.insertAdjacentHTML(
-    "beforeend",
-    `<div class="message frnd_message"><p>${message}<br /><span>${user}</span></p></div>`
-  );
-  if (image !== undefined) {
-    const imagen = document.createElement("img");
-    imagen.src = image;
-    printMessages.appendChild(imagen);
+  if(user==document.querySelector("#UserNick").value)
+  {
+    printMessages.insertAdjacentHTML(
+      "beforeend",
+      `<div class="message frnd_message"><p>${message}<br /><span>${user}</span></p></div>`
+    );
+    if (image !== undefined) {
+      const imagen = document.createElement("img");
+      imagen.src = image;
+      printMessages.appendChild(imagen);
+    }
+    printMessages.scrollTop = printMessages.scrollHeight;
   }
-  printMessages.scrollTop = printMessages.scrollHeight;
+  else
+  {
+    printMessages.insertAdjacentHTML(
+      "beforeend",
+      `<div class="message frnd_message bg-primary"><p>${message}<br /><span>${user}</span></p></div>`
+    );
+    if (image !== undefined) {
+      const imagen = document.createElement("img");
+      imagen.src = image;
+      printMessages.appendChild(imagen);
+    }
+    printMessages.scrollTop = printMessages.scrollHeight;
+  }
+ 
 });
 
 txtUserNickName.addEventListener("keypress", function (e) {
