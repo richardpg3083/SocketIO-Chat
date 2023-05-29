@@ -63,7 +63,7 @@ socket.on("sendMessage", ({ message, user, image }) => {
   {
     printMessages.insertAdjacentHTML(
       "beforeend",
-      `<div class="message frnd_message"><p>${message}<br /><span>${user}</span></p></div>`
+      `<div class="message my_message "><p>${message}<br /><span>${user}</span></p></div>`
     );
     if (image !== undefined) {
       const imagen = document.createElement("img");
@@ -76,7 +76,7 @@ socket.on("sendMessage", ({ message, user, image }) => {
   {
     printMessages.insertAdjacentHTML(
       "beforeend",
-      `<div class="message frnd_message bg-primary"><p>${message}<br /><span>${user}</span></p></div>`
+      `<div class="message frnd_message "><p>${message}<br /><span>${user}</span></p></div>`
     );
     if (image !== undefined) {
       const imagen = document.createElement("img");
