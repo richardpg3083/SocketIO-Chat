@@ -75,11 +75,39 @@
           <div class="col-md-6">
             <div class="card ">
               <div class="card-body">
-               <center> <img src="https://media.licdn.com/dms/image/C4E0BAQG3b9dPQ5oaTw/company-logo_200_200/0/1612886177953?e=2147483647&v=beta&t=-CT-sdBMWKf5QaFKiHT3JHD_BFUdBQ1HYFVv6IvnHP4" class="card-img-top"  style="width: 50%; height: 150px;" alt="...">
-               <h5 class="card-title">Chat Web</h5></center> <br>
+                <div class="row">
+                  <div class="col-md-8 offset-md-4">
+                    <img src="https://media.licdn.com/dms/image/C4E0BAQG3b9dPQ5oaTw/company-logo_200_200/0/1612886177953?e=2147483647&v=beta&t=-CT-sdBMWKf5QaFKiHT3JHD_BFUdBQ1HYFVv6IvnHP4" class="card-img-top"  style="width: 50%; height: 150px;" alt="...">
+             
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-md-12 text-center">
+                    <h5 class="card-title">Chat Web</h5>
+                    <p class="alert alert-info">Elige tu avatar</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 text-center">
+                    <img src="/img/av1.png" for="av1">
+                    <input type="radio" id="av1" name="avatar"  checked value="/img/av1.png">
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <img src="/img/av2.png" for="av2" text-center>
+                    <input type="radio" id="av2" name="avatar" value="/img/av2.png">
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <img src="/img/av3.png" for="av3" text-center>
+                    <input type="radio" id="av3" name="avatar" value="/img/av3.png">
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <img src="/img/av4.png" for="av4" text-center>
+                    <input type="radio" id="av4" name="avatar" value="/img/av4.png">
+                  </div>
+                </div>
                
                   <div class="form-group">
-                    <label for="inputUsuario">Usuario</label>
+                    <label for="userNickName" class="h6 text-dark">Usuario</label>
                     <input type="text"  name="userNickName" class="form-control" id="userNickName" placeholder="Ingrese su usuario" required=""> <br>
                   </div>
                   <button type="submit" id="registerUser" class="btn btn-primary btn-block">Ingresar</button>
@@ -98,7 +126,10 @@
               <div class="col-md-12 bg-secondary">
                 <div class="header">
                   <div class="userimg">
-                    <img src="img/chat-grupal.jpg" class="cover" />
+                    <img src="img/chat-grupal.jpg" class="cover" id="imgUserchat"/>
+                  </div>
+                  <div>
+                   <h5 id="userChat" class="mt-2" >User</h5> 
                   </div>
                   <ul class="nav_icons pt-3">
                     <li>
@@ -167,7 +198,7 @@
                   <div class="userimg me-3">
                     <img src="img/chat-grupal.jpg" class="cover" />
                   </div>
-                  <h5 class="pt-4" id="userChat">Chat<br /><p class="text-dark fs-6">en línea</p></h4>
+                  <h5 class="pt-4" >Chat<br /><p class="text-dark fs-6">en línea</p></h4>
                     <input type="hidden" id="UserNick" Value="">
                 </div>
                 <ul class="nav_icons pt-3">
@@ -244,7 +275,6 @@
             </a>
           </div>
            <br>
-            <p class=" text-white mb-0">Company Name © 2018</p>
             <h3>TECNOLOGIAS EN INTERNET</h3>
             <h5>Integrantes:
              Juan Richard Poma

@@ -40,6 +40,23 @@ socket.on("login", () => {
   formChatGrupal.style.display = "block";
 document.querySelector("#userChat").innerHTML=txtUserNickName.value+"<br /><p class='text-dark fs-6'>en línea</p>";
 document.querySelector("#UserNick").value=txtUserNickName.value;
+if (document.getElementById("av1").checked==true)
+{
+  document.getElementById("imgUserchat").src=document.getElementById("av1").value;
+}
+if (document.getElementById("av2").checked==true)
+{
+  document.getElementById("imgUserchat").src=document.getElementById("av2").value;
+}
+if (document.getElementById("av3").checked==true)
+{
+  document.getElementById("imgUserchat").src=document.getElementById("av3").value;
+
+}
+if (document.getElementById("av4").checked==true)
+{
+  document.getElementById("imgUserchat").src=document.getElementById("av4").value;
+}
 });
 
 socket.on("userExists", () => {
